@@ -16,7 +16,6 @@ export class WorkersComponent implements OnInit {
     this.loading = true;
     this.workersService.getWorkers().subscribe((res) => {
       this.workers = res;
-      console.log(this.workers)
       this.loading = false;
     });
   }
@@ -24,5 +23,6 @@ export class WorkersComponent implements OnInit {
   borrarWorker(worker: WorkerModel, i: number) {
     this.workers.splice(i, 1);
     this.workersService.borrarWorker(worker.id).subscribe();
+    alert('Se borró el trabajador con éxito')
   }
 }

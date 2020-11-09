@@ -36,6 +36,7 @@ export class WorkerComponent implements OnInit {
       peticion = this.workersService.crearWorker(this.worker)
     }
     peticion.subscribe(res => {
+      alert('Se agregó el trabajador con éxito')
     })
   }
 }
